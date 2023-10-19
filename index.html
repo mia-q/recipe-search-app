@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Recipe Search</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Recipe Search</h1>
+            <input type="text" placeholder="Search by Ingredients" id="ingredients" name="ingredients">
+            <button  type="submit" onclick="getRecipe()" id="search">Find Recipes</button>
+        <div id="result0">
+            <h1 id="result-title0"></h1>
+            <img src="" id="result-img0"/></br>
+            <a href="" id="result-link0" style="display:none" onclick="goToRecipe(0)">Go to Recipe</a>
+        </div>
+        <div id="result1">
+            <h1 id="result-title1"></h1>
+            <img src="" id="result-img1"/></br>
+            <a href="" id="result-link1" style="display:none">Go to Recipe</a>
+        </div>
+        <div id="result2">
+            <h1 id="result-title2"></h1>
+            <img src="" id="result-img2"/></br>
+            <a href="" id="result-link2" style="display:none">Go to Recipe</a>
+        </div>
+        <button type="button" onclick="loadMore()">More results</button>
+        <script src="/recipe-search/index.js" async defer></script>
+    </body>
+</html>
+<html></html>
