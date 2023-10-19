@@ -13,7 +13,8 @@ function getRecipe() {
         console.log(data);
         for (let i=0; i<data.length; i++){
             document.getElementById("result-title" + i).innerHTML=data[i].title;
-            document.getElementById("result-img" + i).src=data[i].image;document.getElementById("result-link" + i).setAttribute("style", "display: block");
+            document.getElementById("result-img" + i).src=data[i].image;
+            document.getElementById("result-link" + i).setAttribute("style", "display: block");
         }
         resultIds.push(data[i].id);
     })        
