@@ -1,35 +1,50 @@
 const baseURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
-numOfResults=3;
-let n="&number=" + numOfResults;
+let n="&number="
+let numOfResults = 3;
 const apiKey = "&apiKey=d44c076e976b4c809c5562e00c9111fa";
 let resultIds=[];
 
-function getRecipe() {
+
+function getRecipe(numOfResults) {
     let userInput = document.getElementById("ingredients").value;
-    userInput.toString();
-    fetch (baseURL + userInput + n + apiKey)
+    userInput = userInput.toString();
+    fetch (baseURL + userInput + n + numOfResults + apiKey)
     .then(res => res.json())
     .then((data) => {
         console.log(data);
         for (let i=0; i<data.length; i++){
-            document.getElementById("result-title" + i).innerHTML=data[i].title;
-            document.getElementById("result-img" + i).src=data[i].image;
-            document.getElementById("result-link" + i).setAttribute("style", "display: block");
+            let result = document.createElement("div")
+            result.id = "result" + i;
+            let heading = document.createElement("h1");
+            heading.innerHTML = data[i].title;
+            let image = document.createElement("img");
+            image.src = data[i].image;
+            let resultButton = document.createElement("button");
+            resultButton.innerHTML = "Open Recipe Card";
+            resultButton.addEventListener("click", () => goToRecipe(i));
+            result.appendChild(heading);
+            result.appendChild(image);
+            result.appendChild(resultButton);
+            document.getElementById("results-container").appendChild(result);
+            resultIds.push(data[i].id);
+            console.log(resultIds);
         }
-        resultIds.push(data[i].id);
-    })        
-    }
-    
-// function loadMore () {
-//     numOfResults + 3;
-// }
+    }) 
+}
 
-function goToRecipe(i) {
+function loadMore () {
+    newNum = numOfResults + 3;
+    getRecipe(newNum);
+}
+
     
-    fetch("https://api.spoonacular.com/recipes/" + resultIds[i] +"/card&apiKey=d44c076e976b4c809c5562e00c9111fa")
+    
+
+function goToRecipe(id) {
+    fetch("https://api.spoonacular.com/recipes/" + id +"/card?apiKey=d44c076e976b4c809c5562e00c9111fa")
     .then(res => res.json())
     .then((data) => {
         console.log(data);
-    //     document.getElementById("result-link").href= `https://api.spoonacular.com/recipes/${data[i].id}/card`
+        document.getElementById("result-link").href=data[0].url;
     })
 }
