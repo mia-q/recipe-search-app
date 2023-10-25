@@ -13,9 +13,10 @@ function getRecipe(numOfResults) {
     .then((data) => {
         console.log(data);
         for (let i=0; i<data.length; i++){
-            let result = document.createElement("div")
+            let result = document.createElement("div") //
+            result.className = "result"; // made a class name to style the divs together
             result.id = "result" + i;
-            let heading = document.createElement("h1");
+            let heading = document.createElement("h3"); // these should be h3's probably
             heading.innerHTML = data[i].title;
             let image = document.createElement("img");
             image.src = data[i].image;
