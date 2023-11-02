@@ -6,11 +6,14 @@
         <title>Recipe Search</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inclusive+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Recipe Search</h1>
-            <input type="text" placeholder="Search by Ingredients" id="ingredients" name="ingredients">
+        <input type="text" placeholder="Ingredients you have" id="ingredients" name="ingredients">
             <button  type="submit" onclick="getRecipe()" id="search">Find Recipes</button>
             <div id="results-container"></div>
             </br>
@@ -20,6 +23,7 @@
                 <span class="close">&times;</span>
             </div>        
         </br>
-        <script src="/recipe-search/index.js" async defer></script>
+        <script src="index.js" async defer></script>
+        
     </body>
 </html>
