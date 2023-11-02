@@ -1,0 +1,309 @@
+:root  {    
+
+    /* custom property indices */
+
+    /*color*/   
+    --color-primary: #ff6666ff;   
+    --color-secondary:  #f1e8b8ff;
+    --color-tertiary: #5d2e8cff;
+    --color-accent-primary: #ccff66ff;
+    --color-accent-secondary: #2ec4b6ff;
+    
+    --color-text: #000000;
+    --color-text-light: #ffffff;
+    --color-text-dark: #000000;
+    --color-text-placeholder: rgba(128, 128, 128, 0.589);
+    --color-text-secondary: #ffffff;
+    --color-text-secondary-light: #ffffff;
+    --color-text-secondary-dark: #000000;
+    --color-text-tertiary: #ffffff;
+    --color-text-tertiary-light: #ffffff;
+    --color-text-tertiary-dark: #000000;
+
+    /* CSS HEX */
+--bittersweet: #ff6666ff;
+--green-yellow: #ccff66ff;
+--tekhelet: #5d2e8cff;
+--light-sea-green: #2ec4b6ff;
+--vanilla: #f1e8b8ff;
+
+/* CSS HSL */
+--bittersweet: hsla(0, 100%, 70%, 1);
+--green-yellow: hsla(80, 100%, 70%, 1);
+--tekhelet: hsla(270, 51%, 36%, 1);
+--light-sea-green: hsla(174, 62%, 47%, 1);
+--vanilla: hsla(51, 67%, 83%, 1);
+    
+    /*font*/
+    --font-primary: 'Inclusive Sans', sans-serif;
+    --font-secondary: 'Abril Fatface', sans-serif;
+    --font-tertiary: 'Roboto', sans-serif;
+    --font-size-XXL: clamp(2rem, 5vw, 4rem);
+    --font-size-primary: 1.6rem;
+    --font-size-secondary: 1.4rem;
+    --font-size-tertiary: 1.2rem;
+    --font-weight-primary: 400;
+    --font-weight-secondary: 400;
+    --font-weight-tertiary: 400;
+    --line-height-primary: 1.5;
+    --line-height-secondary: 1.5;
+    --line-height-tertiary: 1.5;
+    --letter-spacing-primary: 0.1rem;
+    --letter-spacing-secondary: 0.1rem;
+    --letter-spacing-tertiary: 0.1rem;
+
+    /*spacing*/
+    --spacing-xxs: 0.4rem;
+    --spacing-xs: 0.8rem;
+    --spacing-s: 1.6rem;
+    --spacing-m: 2.4rem;
+    --spacing-l: 3.2rem;
+    --spacing-xl: 4.0rem;
+
+    /*border*/
+    --border-radius-primary: 0.4rem;
+    --border-radius-secondary: 0.8rem;
+    --border-radius-tertiary: 1.2rem;
+    --border-width-primary: 0.1rem;
+    --border-width-secondary: 0.2rem;
+    --border-width-tertiary: 0.3rem;
+    --border-style-primary: solid;
+    --border-style-secondary: solid;
+    --border-style-tertiary: solid;
+    --border-color-primary: #000000;
+    --border-color-secondary: #000000;
+    --border-color-tertiary: #000000;
+
+    /*box-shadow*/
+    --box-shadow-primary: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    --box-shadow-secondary: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+    --box-shadow-tertiary: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
+
+    /*breakpoints*/
+    --breakpoint-small: 37.5em;
+    --breakpoint-medium: 56.25em;
+    --breakpoint-large: 75em;
+    --breakpoint-xlarge: 112.5em;
+    --breakpoint-xxlarge: 150em;
+
+    /*z-index*/
+    --z-index-primary: 10;
+    --z-index-secondary: 20;
+
+    /*misc*/
+    --transition-primary: all 0.2s ease-in-out;
+    --transition-secondary: all 0.4s ease-in-out;
+    --transition-tertiary: all 0.6s ease-in-out;
+
+    /*grid*/
+    --grid-columns: 12;
+    --grid-gutter: 2.4rem;
+    --grid-margin: 0 1.2rem;
+    --grid-width: 100%;
+    --grid-width-small: 37.5em;
+    --grid-width-medium: 56.25em;
+    --grid-width-large: 75em;
+
+    /*media-queries*/
+    --mq-small: only screen and (max-width: 37.5em);
+    --mq-medium: only screen and (max-width: 56.25em);
+    --mq-large: only screen and (max-width: 75em);
+    --mq-xlarge: only screen and (max-width: 112.5em);
+
+    /*misc*/
+
+
+
+
+
+} 
+
+
+/* Reset some default styles */
+body, h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1{
+    
+  }
+
+  /* Button styles */
+    button {
+        border: none;
+        background-color: var(--color-tertiary);
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        
+    }
+
+    button:hover {
+        box-shadow: 0.4rem 0.4rem 0rem var(--color-accent-primary);
+        color: var(--color-accent-primary);
+    }
+  
+  /* Set a background color for the page */
+  body {
+    background-color: var(--color-secondary);
+    font-family: var(--font-primary);
+  }
+  
+  /* Style the header (Recipe Search) */
+  h1 {
+    text-align: center;
+    font-size: var(--font-size-XXL);
+    /* responsive font-size with clamp */   
+  
+    background-color:var(--color-primary);
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-family: var(--font-secondary);
+  }
+
+  h3 {
+    text-align: center;
+    font-size: var(--font-size-primary);
+    /* responsive font-size with clamp */   
+  
+   
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-family: var(--font-secondary);
+  }
+  
+  /* Style the search input and button */
+  /* Set a max width on search bar so it doesn't span to wide on desktop */
+  #ingredients {
+    font-family: var(--font-primary);
+    color:var(--color-text);
+    border: none;
+    max-width: 500px;
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    outline: none;
+    display: block;
+  }
+
+  #ingredients::placeholder {
+    color: var(--color-text-placeholder);
+  }
+
+  #ingredients:focus {
+    outline: none;
+    box-shadow: 0.4rem 0.4rem 0rem var(--color-accent-primary);
+  }
+  
+  #search {
+    background-color: var(--color-tertiary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    
+  }
+
+  #search:hover {
+    
+   
+  }
+
+  #search:focus {
+    box-shadow: 0.4rem 0.4rem 0rem var(--color-accent-primary);
+    outline: none;
+  }
+  
+  /* Style the results container */
+  #results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    
+    gap:2em;
+    /* justify-content: stretch;
+    align-items: stretch; */
+    margin: 20px;
+  }
+
+  #results-container .img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+
+  }
+  
+  /* Style individual result items */
+  .result {
+    display: flex;   
+    flex-direction: column;
+    background-color: var(--color-primary);
+    /* border: 1px solid yellow; */
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: space-between;
+    padding: var(--spacing-m);
+    /* padding: 10px;
+    text-align: center; */
+    /* background: radial-gradient(circle at 50% 50%, var(--color-accent-primary) 60%, var(--color-accent-primary) 70%, var(--color-primary) 70%, var(--color-primary) 100%);
+    background-size: cover; */
+    /* background-attachment: fixed;  */
+  }
+
+  .result::before{
+    content: "";
+    position: absolute;
+    top: 50;
+    left: 180;
+    width: 100%;
+    border-radius: 50%;
+    border: var(--color-accent-primary) solid 10px;
+    /* background-attachment: fixed;  */
+    z-index: -1;
+  }
+
+  .result::after{
+    content: "";
+    position: absolute;
+    top: -50;
+    left: -180;
+    width: 100%;
+    border-radius: 50%;
+    border: var(--color-accent-primary) solid 10px;
+    /* background-attachment: fixed;  */
+    z-index: -1;
+  }
+  
+  /* Style the "More results" button */
+  #load-more {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  /* Style the image inside results */
+  .result img {
+    width:100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Style the "Open Recipe Card" buttons */
+  .result button {
+    background-color: var(--color-tertiary);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 10px 0;
+  }
