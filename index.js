@@ -128,9 +128,8 @@ function showError() {
     resultBox.appendChild(errorMessage);
 }
 
-//where to put this?
 
-
+//everything from here down is just failed experiments that might come in handy later (even if it's just a reminder of what doesn't work)
 
 
 
