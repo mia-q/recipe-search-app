@@ -45,7 +45,32 @@ function showResults(data) {
         const resultButton = document.createElement("button");
         resultButton.innerHTML = "Open Recipe Card";
         resultButton.className = "result-button";
-        resultButton.addEventListener("click", () => goToRecipe(resultIds[i]));
+        resultButton.addEventListener("click", () => goToRecipe(resultIds[i])); // Do we want this in showResults?Yes, I think so.
+        // Can we just remove this Listener and add it back every time? Or remove the child nodes early in this process?
+
+       
+
+            /*
+                 FLOW For the Modal creation:
+                 ~    document.eventListener --> getRecipe()
+                 ~      getRecipe() --> showResults()
+                 ~       showResults()
+                ~48        resultButton.addEventListener --> goToRecipe()
+                ~90    goToRecipe() --> 98 showCard()
+                ~110    showCard() 
+
+                user clicks on getRecipe
+                showResults runs once and displays initial recipe cards
+                also creates/displays resultButton w/ event listener
+                user clicks resultButton listener and runs goToRecipe
+                goToRecipe() makes a 2nd API fetch and RETURNS A PROMISE to showCard()
+                *** showCard() pseudo code continues below next to the function itself
+
+
+            
+            */
+
+
         result.appendChild(heading);
         result.appendChild(image);
         result.appendChild(resultButton);
@@ -75,6 +100,7 @@ function removeChildNodes(parent, firstChild) {
 }
 
 function goToRecipe(id) {
+
     try {
         fetch("https://api.spoonacular.com/recipes/" + id +"/card?apiKey=d44c076e976b4c809c5562e00c9111fa")
         .then(res => res.json())
@@ -82,7 +108,7 @@ function goToRecipe(id) {
             console.log(data);
             showCard(data);
         })
-    removeOtherCards(document.getElementById("recipe-card"));    
+    // removeOtherCards(document.getElementById("recipe-card"));    
     } catch {
         console.error(error.message);
         showError();
@@ -91,11 +117,16 @@ function goToRecipe(id) {
 }
 
 function showCard (data) {
-    const modal = document.getElementById("recipe-card");
+    const modal = document.getElementById("recipe-card"); // modal becomes "recipe-card" element
+    // can we just create a new recipe-card element every time instead of using a static div preloaded in HTML?
+    // modal.replaceChildren(); // NEW CODE -- Does this clear modal child nodes every time we run showCard()?
     modal.style.display = "block";
+
     const recipeCard = document.createElement("img");
+
     const span = document.getElementsByClassName("close")[0];
     span.addEventListener("click", () => {
+        //modal.replaceChildren(); // NEW CODE didn't fix things here either
         modal.style.display = "none";
     });
     window.onclick = function(event) {
@@ -107,7 +138,7 @@ function showCard (data) {
     recipeCard.src = data.url;
     recipeCard.style.width = "800px";
     recipeCard.style.display = "block";
-    modal.appendChild(recipeCard);
+    modal.appendChild(recipeCard); // use replaceChildren instead of appendChild 
 }
 
 
@@ -115,7 +146,11 @@ function removeOtherCards(modal) {
     while (modal.firstElementChild) {
         modal.removeChild(modal.firstElementChild);
     }
-} 
+}
+
+function replaceModal(modal){
+
+}
 
 function showError() {
     const errorPicture = document.createElement("img");
