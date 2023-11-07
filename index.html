@@ -12,17 +12,22 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Recipe Search</h1>
+        <div class="container">
+            <h1>Recipe Search</h1>
             <input type="text" placeholder="Ingredients you have" id="ingredients" name="ingredients">
             <button  type="submit" onclick="getRecipe()" id="search">Find Recipes</button>
             <div id="results-container"></div>
-            </br>
             <div id = "more-results"></div>
-            </br>
-            <div id="recipe-card" class="modal">
+            
+        </div>
+        
+           
+           
+            <!-- Testing to see what happens if we create this div in JS as it's needed
+                <div id="recipe-card" class="modal">
                 <span class="close">&times;</span>
-            </div>        
-        </br>
+            </div>         -->
+        
         <script src="index.js" async defer></script>
         
     </body>

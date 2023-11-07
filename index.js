@@ -9,6 +9,8 @@ let numOfResults = 5;
 const apiKey = "&apiKey=d44c076e976b4c809c5562e00c9111fa";
 let resultIds=[];
 
+const mainContainer = document.querySelector('.container');
+
 document.addEventListener('keypress', function (e) {
     if (e.key === "Enter") {
         getRecipe();
@@ -117,28 +119,39 @@ function goToRecipe(id) {
 }
 
 function showCard (data) {
-    const modal = document.getElementById("recipe-card"); // modal becomes "recipe-card" element
+    const modalDiv = document.createElement("h1"); // modal becomes "recipe-card" element
     // can we just create a new recipe-card element every time instead of using a static div preloaded in HTML?
     // modal.replaceChildren(); // NEW CODE -- Does this clear modal child nodes every time we run showCard()?
-    modal.style.display = "block";
+ 
+    // modalDiv.style.display = "block";
 
     const recipeCard = document.createElement("img");
+    const closeBtn = document.createElement('img');
+    closeBtn.src = 'images/close-button-svgrepo-com.svg';
+    closeBtn.alt = 'close button';
 
-    const span = document.getElementsByClassName("close")[0];
-    span.addEventListener("click", () => {
+    console.log('WE GOT HERE SO FAR');
+    
+    closeBtn.addEventListener("click", () => {
         //modal.replaceChildren(); // NEW CODE didn't fix things here either
-        modal.style.display = "none";
+        modalDiv.style.display = "none";
     });
     window.onclick = function(event) {
         if (event.target == modal) {
-              modal.style.display = "none";
+              modalDiv.style.display = "none";
         }
     }
     recipeCard.className = "recipe-card-pic";
     recipeCard.src = data.url;
     recipeCard.style.width = "800px";
     recipeCard.style.display = "block";
-    modal.appendChild(recipeCard); // use replaceChildren instead of appendChild 
+    
+    modalDiv.innerText = "Hi Here I am!!";
+    modalDiv.appendChild(recipeCard); 
+    modalDiv.appendChild(closeBtn);
+    mainContainer.appendChild(modalDiv);
+    
+  
 }
 
 
