@@ -9,23 +9,41 @@
   overflow: auto; 
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4); 
+  display: flex;
+  justify-content: center;
 }
 
+.modal-card-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
 .recipe-card-pic {
+  
   background-color: #fefefe;
-  margin: 15% auto; 
+  /* margin: 15% auto;  */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; 
+  /* width: 80%;  */
+  /* height: auto; */
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+
+
+.close-button {
+ /* position at top right of parent element */
+  position: absolute;
+  top: 3%;
+  right: 1%;
+  background-color: white;
+  border-radius: 10px;
+  width:55px;
+  height: 55px;
+ 
 }
+
+
 
 .close:hover,
 .close:focus {
@@ -183,6 +201,12 @@ body, h1 {
   body {
     background-color: var(--color-secondary);
     font-family: var(--font-primary);
+  }
+
+  img{
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
   
   /* Style the header (Recipe Search) */

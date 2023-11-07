@@ -1,7 +1,8 @@
 ///to-do:
-//1. fix recipe cards. make previous card go away before loading new.
+//1. Clear away can't find any recipes message when user clicks search again
 //2. Hide API Key
 //3. Make sure we can search using multiple ingredients. (make format for search parameters less strict so users can type all kinds of things and it still turns out correctly).a maybe create a side panel that shows ingredients the user has added, allow them to delete them...idk
+//4. Modal images need to return a uniform aspect ratio with legible uniform font-size.
 
 const baseURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 const n="&number="
@@ -110,7 +111,7 @@ function goToRecipe(id) {
             console.log(data);
             showCard(data);
         })
-    // removeOtherCards(document.getElementById("recipe-card"));    
+    
     } catch {
         console.error(error.message);
         showError();
@@ -119,18 +120,24 @@ function goToRecipe(id) {
 }
 
 function showCard (data) {
-    const modalDiv = document.createElement("h1"); // modal becomes "recipe-card" element
-    // can we just create a new recipe-card element every time instead of using a static div preloaded in HTML?
-    // modal.replaceChildren(); // NEW CODE -- Does this clear modal child nodes every time we run showCard()?
- 
-    // modalDiv.style.display = "block";
+    const modalDiv = document.createElement("div"); 
+    const modalCardContainer = document.createElement("div");
+    
+    modalDiv.className = "modal";
+    modalCardContainer.className = "modal-card-container";
 
     const recipeCard = document.createElement("img");
+    recipeCard.className = "recipe-card-pic";
+    recipeCard.src = data.url;
+    // recipeCard.style.width = "800px";
+
+
     const closeBtn = document.createElement('img');
     closeBtn.src = 'images/close-button-svgrepo-com.svg';
     closeBtn.alt = 'close button';
-
-    console.log('WE GOT HERE SO FAR');
+    closeBtn.className = 'close-button';
+  
+  
     
     closeBtn.addEventListener("click", () => {
         //modal.replaceChildren(); // NEW CODE didn't fix things here either
@@ -141,29 +148,15 @@ function showCard (data) {
               modalDiv.style.display = "none";
         }
     }
-    recipeCard.className = "recipe-card-pic";
-    recipeCard.src = data.url;
-    recipeCard.style.width = "800px";
-    recipeCard.style.display = "block";
-    
-    modalDiv.innerText = "Hi Here I am!!";
-    modalDiv.appendChild(recipeCard); 
-    modalDiv.appendChild(closeBtn);
+   
+    modalCardContainer.appendChild(recipeCard); 
+    modalCardContainer.appendChild(closeBtn);
+    modalDiv.appendChild(modalCardContainer);
     mainContainer.appendChild(modalDiv);
     
   
 }
 
-
-function removeOtherCards(modal) {
-    while (modal.firstElementChild) {
-        modal.removeChild(modal.firstElementChild);
-    }
-}
-
-function replaceModal(modal){
-
-}
 
 function showError() {
     const errorPicture = document.createElement("img");
