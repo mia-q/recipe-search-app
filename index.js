@@ -5,12 +5,15 @@
 
 const baseURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 const n="&number="
-let numOfResults = 5;
+let numOfResults = 2;
 const apiKey = "&apiKey=d44c076e976b4c809c5562e00c9111fa";
 let resultIds=[];
 
 document.addEventListener('keypress', function (e) {
     if (e.key === "Enter") {
+        const container = document.getElementById("results-container");
+        const result = document.getElementsByClassName("result");
+        removeChildNodes(container, result);
         getRecipe();
     }
 }) //ideally this can be done using a form element and the "onsubmit" eventlistener, but i messed with it and couldn't quite get it...
@@ -82,7 +85,7 @@ function goToRecipe(id) {
             console.log(data);
             showCard(data);
         })
-    removeOtherCards(document.getElementById("recipe-card"));    
+    // removeOtherCards(document.getElementById("recipe-card"));    
     } catch {
         console.error(error.message);
         showError();
@@ -111,11 +114,11 @@ function showCard (data) {
 }
 
 
-function removeOtherCards(modal) {
-    while (modal.firstElementChild) {
-        modal.removeChild(modal.firstElementChild);
-    }
-} 
+// function removeOtherCards(modal) {
+//     while (modal.firstElementChild) {
+//         modal.removeChild(modal.firstElementChild);
+//     }
+// } 
 
 function showError() {
     const errorPicture = document.createElement("img");
@@ -127,8 +130,6 @@ function showError() {
     resultBox.appendChild(errorPic);
     resultBox.appendChild(errorMessage);
 }
-
-//where to put this?
 
 
 
