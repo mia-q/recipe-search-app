@@ -12,17 +12,31 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Recipe Search</h1>
+        <div class="container">
+            <h1>Recipe Search</h1>
             <input type="text" placeholder="Ingredients you have" id="ingredients" name="ingredients">
             <button  type="submit" onclick="getRecipe()" id="search">Find Recipes</button>
             <div id="results-container"></div>
-            </br>
             <div id = "more-results"></div>
-            </br>
-            <div id="recipe-card" class="modal">
+            
+        </div>
+        
+        <!-- <div class="modal"> -->
+            <!-- <div class="card-container">
+                <img class="recipe-card-pic" src="images/neom-V8w0gSmxajY-unsplash.jpg" alt="">
+                <img class="close-button" src="images/close-button-svgrepo-com.svg" alt="">
+            </div>
+             -->
+             
+            
+            
+        <!-- </div> -->
+           
+            <!-- Testing to see what happens if we create this div in JS as it's needed
+                <div id="recipe-card" class="modal">
                 <span class="close">&times;</span>
-            </div>        
-        </br>
+            </div>         -->
+        
         <script src="index.js" async defer></script>
         
     </body>
