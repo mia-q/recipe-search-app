@@ -17,11 +17,22 @@
             <input type="text" placeholder="Ingredients you have" id="ingredients" name="ingredients">
             <button  type="submit" onclick="getRecipe()" id="search">Find Recipes</button>
             <div id="results-container"></div>
+            <div id="typo-message" style="display: none;">
+                <p class="typo">Oops, it looks like we can't find any recipe with those ingredients</p>
+                <img src="images/spilledMilk.jpg" alt="">
+            </div>
             <div id = "more-results"></div>
             
         </div>
         
-        <!-- <div class="modal"> -->
+      
+        
+        <script src="index.js" async defer></script>
+        
+    </body>
+</html>
+
+  <!-- <div class="modal"> -->
             <!-- <div class="card-container">
                 <img class="recipe-card-pic" src="images/neom-V8w0gSmxajY-unsplash.jpg" alt="">
                 <img class="close-button" src="images/close-button-svgrepo-com.svg" alt="">
@@ -36,8 +47,3 @@
                 <div id="recipe-card" class="modal">
                 <span class="close">&times;</span>
             </div>         -->
-        
-        <script src="index.js" async defer></script>
-        
-    </body>
-</html>
