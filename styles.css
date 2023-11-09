@@ -257,7 +257,7 @@ body, h1 {
     box-shadow: 0.4rem 0.4rem 0rem var(--color-accent-primary);
   }
   
-  #search {
+  #search-btn {
     background-color: var(--color-tertiary);
     color: white;
     border: none;

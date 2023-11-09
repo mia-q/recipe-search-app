@@ -13,14 +13,19 @@
     </head>
     <body>
         <div class="container">
-            <h1>Recipe Search</h1>
-            <input type="text" placeholder="Ingredients you have" id="ingredients" name="ingredients">
-            <button  type="submit" onclick="getRecipe()" id="search">Find Recipes</button>
-            <div id="results-container"></div>
-            <div id="typo-message" style="display: none;">
+            <div class="searchBox">
+                <h1>Recipe Search</h1>
+                <input type="text" placeholder="Ingredients you have" id="ingredients" name="ingredients">
+                <button  type="submit" onclick="newGetRecipe()" id="search-btn">Find Recipes</button>
+            </div>
+           
+            <div id="results-container">
+
+            </div>
+            <!-- <div id="typo-message" style="display: none;">
                 <p class="typo">Oops, it looks like we can't find any recipe with those ingredients</p>
                 <img src="images/spilledMilk.jpg" alt="">
-            </div>
+            </div> -->
             <div id = "more-results"></div>
             
         </div>
