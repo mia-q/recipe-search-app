@@ -264,7 +264,11 @@ img, svg, video, canvas {
     margin: 0;
     font-family: var(--font-secondary);
   }
-  
+
+  h4 {
+    text-align: center;
+  }
+
   /* Style the search input and button */
   /* Set a max width on search bar so it doesn't span to wide on desktop */
   #search-input {
@@ -405,4 +409,39 @@ img, svg, video, canvas {
     padding: 5px 10px;
     cursor: pointer;
     margin: 10px 0;
+  }
+
+
+  #input-storage {
+    float: right;
+    padding: 50px;
+
+  }
+
+  .list-items {
+    padding: 10px;
+    color:var(--color-tertiary);
+    background-color:#EBE3D5;
+    list-style-type: none;
+  }
+
+  #list-title {
+    color: black;
+    font-size: var(--mq-medium);
+    display: none;
+  }
+
+  #new-search {
+    color:#fefefe;
+    display: none;
+    padding: 10px;
+  }
+
+  #error-div {
+    text-align: center;
+  }
+
+  #try-again {
+    color:#fefefe;
+    padding: 10px;
   }

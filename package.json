@@ -1,0 +1,23 @@
+{
+  "name": "recipe-search",
+  "version": "1.0.0",
+  "description": "recipe search web app project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mia-q/recipe-search-app.git"
+  },
+  "author": "Mia Quintana, Evan Hill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mia-q/recipe-search-app"
+  },
+  "homepage": "https://github.com/mia-q/recipe-search-app#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
