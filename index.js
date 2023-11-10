@@ -1,12 +1,5 @@
 ///to-do:
 //1. Hide API Key
-//2. Modal images need to return a uniform aspect ratio with legible uniform font-size.
-
-//things i added:
-//1. input storage to list ingredients included in search (probably could use some better styling) with "new search" reload button.
-//2. fixed error screen and added reload button "try again". still can't get spilled milk img to load.
-//3. auto clear search bar when clicked.
-//3. fixed typo message but it only works for the first search and it is added to input storage regardless. this could be fixed or we could delete the whole ingredient storage part and call it a day.
 
 const baseURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 const n="&number="
@@ -33,14 +26,13 @@ document.addEventListener('keypress', function (e) {
 function getRecipe() {
     try {
         let userInput = inputBox.value;
-        ingredientsToInclude.push(userInput);
+        storeIngredients(userInput);
         let searchIngredients = ingredientsToInclude.toString();
         fetch (baseURL + searchIngredients + n + numOfResults + apiKey)
         .then(res => res.json())
         .then((data) => {
         console.log(data);
         showResults(data);
-        storeIngredients(userInput);
     }) 
     } catch (error){
         console.error(error.message);
@@ -52,15 +44,21 @@ function storeIngredients (userInput) {
     document.getElementById("list-title").style.display="block";
     newSearchBtn = document.getElementById("new-search");
     newSearchBtn.style.display="block";
-    newSearchBtn.addEventListener("click", () => {
-        window.location.reload();
-    })
     let list = document.createElement("ul");
     let item = document.createElement("li");
     item.className = "list-items";
-    item.textContent = userInput;
     ingredientsContainer.appendChild(list);
-    list.appendChild(item);
+    newSearchBtn.addEventListener("click", () => {
+        window.location.reload();
+    })
+    if (ingredientsToInclude.includes(userInput)) {
+        return ingredientsToInclude; 
+    } else {
+        ingredientsToInclude.push(userInput);
+        item.textContent = userInput;
+        list.appendChild(item);
+    }
+    
 }
 
 function showResults(data) {
@@ -77,32 +75,7 @@ function showResults(data) {
         const resultButton = document.createElement("button");
         resultButton.innerHTML = "Open Recipe Card";
         resultButton.className = "result-button";
-        resultButton.addEventListener("click", () => goToRecipe(resultIds[i])); // Do we want this in showResults?Yes, I think so.
-        // Can we just remove this Listener and add it back every time? Or remove the child nodes early in this process?
-
-       
-
-            /*
-                 FLOW For the Modal creation:
-                 ~    document.eventListener --> getRecipe()
-                 ~      getRecipe() --> showResults()
-                 ~       showResults()
-                ~48        resultButton.addEventListener --> goToRecipe()
-                ~90    goToRecipe() --> 98 showCard()
-                ~110    showCard() 
-
-                user clicks on getRecipe
-                showResults runs once and displays initial recipe cards
-                also creates/displays resultButton w/ event listener
-                user clicks resultButton listener and runs goToRecipe
-                goToRecipe() makes a 2nd API fetch and RETURNS A PROMISE to showCard()
-                *** showCard() pseudo code continues below next to the function itself
-
-
-            
-            */
-
-
+        resultButton.addEventListener("click", () => goToRecipe(resultIds[i]));
         result.appendChild(heading);
         result.appendChild(image);
         result.appendChild(resultButton);
