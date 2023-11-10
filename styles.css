@@ -1,3 +1,38 @@
+/* Global CSS RESET -to get uniform, predictable styling and remove browser user agent stylesheets
+from interfering with structure */
+
+*, ::before, ::after { box-sizing: border-box; }
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+pre { white-space: pre-wrap; }
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+audio:not([controls]) { display:none; }
+
+picture { display: contents; }
+source { display: none; }
+
+img, svg, video, canvas {
+  height: auto;
+}
+
+
 .modal {
   /* display: none;  */
   position: fixed; 
@@ -173,11 +208,7 @@
 } 
 
 
-/* Reset some default styles */
-body, h1 {
-    margin: 0;
-    padding: 0;
-  }
+
 
 
 
@@ -236,7 +267,7 @@ body, h1 {
   
   /* Style the search input and button */
   /* Set a max width on search bar so it doesn't span to wide on desktop */
-  #ingredients {
+  #search-input {
     font-family: var(--font-primary);
     color:var(--color-text);
     border: none;
@@ -248,7 +279,7 @@ body, h1 {
     display: block;
   }
 
-  #ingredients::placeholder {
+  #search-input::placeholder {
     color: var(--color-text-placeholder);
   }
 
@@ -278,6 +309,7 @@ body, h1 {
   #results-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
 
     
     gap:2em;
@@ -291,6 +323,19 @@ body, h1 {
     height: auto;
     max-width: 100%;
 
+  }
+
+  .error-div{
+    display: flex;
+    gap:1em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px; 
+  }
+
+  .error-div img{
+    max-width:150px;
   }
   
   /* Style individual result items */
