@@ -33,14 +33,14 @@ searchInput.addEventListener("click", () => {
     searchInput.value="";
 })
 
-document.addEventListener('keypress', function (e) {
-    if (e.key === "Enter") {
-        const container = document.getElementById("results-container");
-        const result = document.getElementsByClassName("result");
-        removeChildNodes(container, result);
-        getRecipe();
-    }
-}) //might need to remove this after merge idk -mia
+// document.addEventListener('keypress', function (e) {
+//     if (e.key === "Enter") {
+//         const container = document.getElementById("results-container");
+//         const result = document.getElementsByClassName("result");
+//         removeChildNodes(container, result);
+//         getRecipe();
+//     }
+// }) //might need to remove this after merge idk 
 
 searchButton.addEventListener('click', getRecipe); 
 
@@ -126,6 +126,7 @@ function newShowResults(data) {
         result.appendChild(resultButton);
         resultsContainer.appendChild(result);
      }
+    }
   
   function storeIngredients (userInput) {
     document.getElementById("list-title").style.display="block";
@@ -224,4 +225,3 @@ function showCard (data) {
 //     errorDiv.appendChild(tryAgain);
 // }
 
-    
