@@ -13,7 +13,20 @@
     </head>
     <body>
         <div class="container">
-            <h1>Recipe Search</h1>
+            <div class="searchBox">
+                <h1>Recipe Search</h1>
+
+                <form id="search-form">
+                    <input type="text" id="search-input" name="q" placeholder="Search...">
+                    <button id="search-btn" type="submit">Find Recipes</button>
+                </form>
+               
+            </div>
+           <div id="results-container">
+                <!-- <img src="images/spilledMilk.jpg" alt=""> -->
+           </div>
+      
+<!--             <h1>Recipe Search</h1>
             
             <input type="text" placeholder="Ingredients you have" id="ingredients" name="ingredients">
             <button  type="submit" onclick="getRecipe()" id="search">Find Recipes</button>
@@ -22,9 +35,8 @@
                 <div id = "list"></div>
                 <button id="new-search">New Search</button>
             </div>
-            <div id="results-container"></div>
+            <div id="results-container"></div> -->
             <div id = "more-results"></div>
-        </div>
         <script src="index.js" async defer></script>
         
     </body>
