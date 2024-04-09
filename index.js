@@ -8,7 +8,7 @@
 const baseURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 
 const numOfResults ="&number=5"
-const apiKey = "&apiKey=d44c076e976b4c809c5562e00c9111fa";
+const apiKey = "&apiKey=0b8a94dc43f6454cab020baffb9438e5";
 let resultIds=[];
 const newBaseURL = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=';
 const options = {
