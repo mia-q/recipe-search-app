@@ -1,17 +1,8 @@
 const baseURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 
 const numOfResults ="&number=5"
-const apiKey = "&apiKey=3c67ba49ba964921847deca7bda78892";
-// const apiKey = "&apiKey=d44c076e976b4c809c5562e00c9111fa";
+const apiKey = "&apiKey=3c67ba49ba964921847deca7bda78892"; //this would be hidden in a real app!!
 let resultIds=[];
-// const newBaseURL = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=';
-const options = {
-	method: 'GET',
-	headers: {
-		// 'X-RapidAPI-Key': '4cfecbde77msh57baceea9d7c0e7p138824jsneaab2127d667',
-		// 'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-	}
-};
 
 
 const mainContainer = document.querySelector('.container');
@@ -42,7 +33,7 @@ async function getRecipe(event){
         if (userInput === "") {
             throw new Error("Hmmm...there's nothing there.");
         }
-        const response = await fetch(fullURL, options);
+        const response = await fetch(fullURL);
         const result = await response.json();
         console.log(result);
         if (result.length === 0) {

@@ -126,11 +126,9 @@ h1 {
 
 h3 {
   text-align: center;
-  font-size: var(--font-size-primary);
-  color: white;
+  color: rgb(3, 3, 3);
   padding: 20px;
   margin: 0;
-  font-family: var(--font-secondary);
 }
 
 h4 {
@@ -287,7 +285,9 @@ h4 {
   #input-storage {
     float: right;
     padding: 50px;
-
+    text-align: right;
+    display: flex;
+    flex-direction: column;
   }
 
   .list-items {
@@ -295,6 +295,7 @@ h4 {
     color:var(--color-tertiary);
     background-color:#EBE3D5;
     list-style-type: none;
+    max-width: 200px;
   }
 
   #list-title {
@@ -304,7 +305,7 @@ h4 {
   }
 
   #new-search {
-    color:#fefefe;
+    color:#0a0a0a;
     display: none;
     padding: 10px;
   }
@@ -314,6 +315,6 @@ h4 {
   }
 
   #try-again {
-    color:#fefefe;
+    color:#030303;
     padding: 10px;
   }
