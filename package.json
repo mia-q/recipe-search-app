@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/mia-q/recipe-search-app#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "dotenv": "^16.3.1"
   }
 }
