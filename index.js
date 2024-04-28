@@ -1,7 +1,7 @@
 const baseURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 
 const numOfResults ="&number=5"
-const apiKey = "&apiKey=d44c076e976b4c809c5562e00c9111fa";
+const apiKey = "&apiKey=3c67ba49ba964921847deca7bda78892"; //this would be hidden in a real app!!
 let resultIds=[];
 
 
