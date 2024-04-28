@@ -2,6 +2,37 @@
 
 *, ::before, ::after { box-sizing: border-box; }
 
+:root  { 
+  /*color*/   
+  --color-primary: rgb(244, 243, 248);   
+  --color-secondary:  rgb(211, 183, 247);
+  --color-tertiary: rgb(126, 154, 231);
+  --color-accent-primary: rgb(59, 34, 129);
+  --color-accent-secondary: #2ec4b6ff;
+  
+  --color-text: #000000;
+  --color-text-placeholder: rgba(128, 128, 128, 0.589);
+
+  
+  /*font*/
+  --font-size-XXL: clamp(2rem, 5vw, 4rem);
+  --font-size-primary: 1.6rem;
+  --font-size-secondary: 1.4rem;
+  --font-size-tertiary: 1.2rem;
+
+  /*spacing*/
+  --spacing-xxs: 0.4rem;
+  --spacing-m: 2.4rem;
+
+  /*media-queries*/
+  --mq-small: only screen and (max-width: 37.5em);
+  --mq-medium: only screen and (max-width: 56.25em);
+  --mq-large: only screen and (max-width: 75em);
+  --mq-xlarge: only screen and (max-width: 112.5em);
+} 
+
+/* page */
+
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
@@ -14,12 +45,18 @@ img {
   height: auto;
 }
 
+body {
+    background-color: var(--color-primary);
+}
+
 .tenor-sans-regular {
   font-family: "Tenor Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+
+/*title */
 
 .title-content {
   width: 100%;
@@ -30,9 +67,19 @@ img {
   background-color:var(--color-secondary);
 }
 
+h1 {
+  text-align: center;
+  font-size: var(--font-size-XXL);
+  background-color:var(--color-secondary);
+  color: black;
+  padding: 20px;
+  margin: 0;
+  font-family: var(--font-secondary);
+}
+
+/*modal */
 
 .modal {
-  /* display: none;  */
   position: fixed; 
   z-index: 1; 
   left: 0;
@@ -52,20 +99,8 @@ img {
   justify-content: center;
 }
 
-.recipe-card-pic {
-  
-  background-color: #fefefe;
-  /* margin: 15% auto;  */
-  padding: 20px;
-  border: 1px solid #888;
-  /* width: 80%;  */
-  /* height: auto; */
-}
-
-
 
 .close-button {
- /* position at top right of parent element */
   position: absolute;
   top: 3%;
   right: 1%;
@@ -73,10 +108,7 @@ img {
   border-radius: 10px;
   width:55px;
   height: 55px;
- 
 }
-
-
 
 .close:hover,
 .close:focus {
@@ -85,108 +117,25 @@ img {
   cursor: pointer;
 }
 
-:root  {    
-
-    /* custom property indices */
-
-    /*color*/   
-    --color-primary: rgb(244, 243, 248);   
-    --color-secondary:  rgb(211, 183, 247);
-    --color-tertiary: rgb(126, 154, 231);
-    --color-accent-primary: rgb(59, 34, 129);
-    --color-accent-secondary: #2ec4b6ff;
-    
-    --color-text: #000000;
-    --color-text-light: #ffffff;
-    --color-text-dark: #000000;
-    --color-text-placeholder: rgba(128, 128, 128, 0.589);
-
-    
-    /*font*/
-    --font-size-XXL: clamp(2rem, 5vw, 4rem);
-    --font-size-primary: 1.6rem;
-    --font-size-secondary: 1.4rem;
-    --font-size-tertiary: 1.2rem;
-    --font-weight-primary: 400;
-    --font-weight-secondary: 400;
-    --font-weight-tertiary: 400;
-    --line-height-primary: 1.5;
-    --line-height-secondary: 1.5;
-    --line-height-tertiary: 1.5;
-    --letter-spacing-primary: 0.1rem;
-    --letter-spacing-secondary: 0.1rem;
-    --letter-spacing-tertiary: 0.1rem;
-
-    /*spacing*/
-    --spacing-xxs: 0.4rem;
-    --spacing-xs: 0.8rem;
-    --spacing-s: 1.6rem;
-    --spacing-m: 2.4rem;
-    --spacing-l: 3.2rem;
-    --spacing-xl: 4.0rem;
-
-    /*border*/
-    --border-radius-primary: 0.4rem;
-    --border-radius-secondary: 0.8rem;
-    --border-radius-tertiary: 1.2rem;
-    --border-width-primary: 0.1rem;
-    --border-width-secondary: 0.2rem;
-    --border-width-tertiary: 0.3rem;
-    --border-style-primary: solid;
-    --border-style-secondary: solid;
-    --border-style-tertiary: solid;
-    --border-color-primary: #000000;
-    --border-color-secondary: #000000;
-    --border-color-tertiary: #000000;
-
-    /*box-shadow*/
-    --box-shadow-primary: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
-    --box-shadow-secondary: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
-    --box-shadow-tertiary: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
-
-    /*breakpoints*/
-    --breakpoint-small: 37.5em;
-    --breakpoint-medium: 56.25em;
-    --breakpoint-large: 75em;
-    --breakpoint-xlarge: 112.5em;
-    --breakpoint-xxlarge: 150em;
-
-    /*z-index*/
-    --z-index-primary: 10;
-    --z-index-secondary: 20;
-
-    /*misc*/
-    --transition-primary: all 0.2s ease-in-out;
-    --transition-secondary: all 0.4s ease-in-out;
-    --transition-tertiary: all 0.6s ease-in-out;
-
-    /*grid*/
-    --grid-columns: 12;
-    --grid-gutter: 2.4rem;
-    --grid-margin: 0 1.2rem;
-    --grid-width: 100%;
-    --grid-width-small: 37.5em;
-    --grid-width-medium: 56.25em;
-    --grid-width-large: 75em;
-
-    /*media-queries*/
-    --mq-small: only screen and (max-width: 37.5em);
-    --mq-medium: only screen and (max-width: 56.25em);
-    --mq-large: only screen and (max-width: 75em);
-    --mq-xlarge: only screen and (max-width: 112.5em);
-
-    /*misc*/
+.recipe-card-pic {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+}
 
 
+h3 {
+  text-align: center;
+  font-size: var(--font-size-primary);
+  color: white;
+  padding: 20px;
+  margin: 0;
+  font-family: var(--font-secondary);
+}
 
-
-
-} 
-
-
-
-
-
+h4 {
+  text-align: center;
+}
 
   /* Button styles */
     button {
@@ -204,51 +153,9 @@ img {
         color: var(--color-accent-primary);
         transition: 200ms;
     }
-  
-  /* Set a background color for the page */
-  body {
-    background-color: var(--color-primary);
-  }
 
-  img{
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Style the header (Recipe Search) */
-  h1 {
-    text-align: center;
-    font-size: var(--font-size-XXL);
-    /* responsive font-size with clamp */   
-  
-    background-color:var(--color-secondary);
-    color: black;
-    padding: 20px;
-    margin: 0;
-    font-family: var(--font-secondary);
-  }
-
-  h3 {
-    text-align: center;
-    font-size: var(--font-size-primary);
-    /* responsive font-size with clamp */   
-  
-   
-    color: white;
-    padding: 20px;
-    margin: 0;
-    font-family: var(--font-secondary);
-  }
-
-  h4 {
-    text-align: center;
-  }
-
-  /* Style the search input and button */
-  /* Set a max width on search bar so it doesn't span to wide on desktop */
+  /* search input and button */
   #search-input {
-    font-family: var(--font-primary);
     color:var(--color-text);
     border: none;
     max-width: 500px;
@@ -280,21 +187,16 @@ img {
   }
 
 
-  #search:focus {
-    box-shadow: 0.4rem 0.4rem 0rem var(--color-accent-primary);
-    outline: none;
+  .search-box {
+    border-radius: 5px;
   }
   
-  /* Style the results container */
+  /*results container */
   #results-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-items: center;
-
-    
     gap:2em;
-    /* justify-content: stretch;
-    align-items: stretch; */
     margin: 20px;
   }
 
@@ -318,21 +220,15 @@ img {
     max-width:150px;
   }
   
-  /* Style individual result items */
+  /* result items */
   .result {
     display: flex;   
     flex-direction: column;
     background-color: var(--color-primary);
-    /* border: 1px solid yellow; */
     border-radius: 5px;
     margin: 10px;
     justify-content: space-between;
     padding: var(--spacing-m);
-    /* padding: 10px;
-    text-align: center; */
-    /* background: radial-gradient(circle at 50% 50%, var(--color-accent-primary) 60%, var(--color-accent-primary) 70%, var(--color-primary) 70%, var(--color-primary) 100%);
-    background-size: cover; */
-    /* background-attachment: fixed;  */
   }
 
   .result::before{
